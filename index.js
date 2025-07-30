@@ -11,9 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res)=> {
-    const hour = new Date().getHours();
-    const isMorning = hour >= 6 && hour < 18;
-    res.render("index.ejs", { isMorning });
+    res.render("index.ejs");
 });
 
 app.post("/search", async (req, res) => {
@@ -27,8 +25,9 @@ app.post("/search", async (req, res) => {
         
         const weatherResponse = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY);
         const weatherData = weatherResponse.data;
+        res.render("weatherDetails.ejs", { weatherData});
         
-    }catch(error){
+    }catch(error){  
         res.send(error);
         console.log(error);
     }
