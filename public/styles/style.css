@@ -1,1 +1,18 @@
-   
+.pageTitle{
+    color: rgb(175, 175, 175);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}   
+
+.search-container{
+    width: 50%;
+    margin: auto;
+    position: relative; 
+    margin-top: 2rem;
+}
+
+.homePageHeader{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color:snow;
+}
