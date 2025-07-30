@@ -1,0 +1,26 @@
+{
+  "name": "weather_application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawanthathsara987/Weather_Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawanthathsara987/Weather_Application/issues"
+  },
+  "homepage": "https://github.com/pawanthathsara987/Weather_Application#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
