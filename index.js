@@ -7,7 +7,9 @@ const port = 3000;
 app.use(express.static("public"));
 
 app.get("/", (req, res)=> {
-    res.render("index.ejs");
+    const hour = new Date().getHours();
+    const isMorning = hour >= 6 && hour < 18;
+    res.render("index.ejs", { isMorning });
 });
 
 app.listen(port, ()=> {
