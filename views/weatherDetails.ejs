@@ -1,7 +1,20 @@
 <%- include("partials/header.ejs") %>
     <div class="container">
-        <div class="weatherDetails container-fluid">
-            <span class="fs-1 fw-bold"> <%= weatherData.weather[0].description %></span>
+        <div class="weatherDetails">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <span class="card-title text-center fs-1 fw-bold"><%= locals.city %></span>
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="https://openweathermap.org/img/wn/<%= locals.icon %>@2x.png">
+                        </div>
+                        <div class="col-8">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
-<%- include("partials/footer.ejs") %>
+    <%- include("partials/footer.ejs") %>

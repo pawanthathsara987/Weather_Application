@@ -1,7 +1,7 @@
 import express  from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-
+import { kelvinToCelsius, formatTimestamp, mpsToKmph } from "./public/js/weatherCalculations.js";
 
 const app = express();
 const port = 3000;
@@ -25,7 +25,8 @@ app.post("/search", async (req, res) => {
         
         const weatherResponse = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY);
         const weatherData = weatherResponse.data;
-        res.render("weatherDetails.ejs", { weatherData});
+        res.render("weatherDetails.ejs", { weatherData, city });
+        console.log(weatherData);
         
     }catch(error){  
         res.send(error);
