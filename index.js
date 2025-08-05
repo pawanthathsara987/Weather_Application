@@ -24,8 +24,21 @@ app.post("/search", async (req, res) => {
         const lon = locationData[0].lon;
         
         const weatherResponse = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY);
-        const weatherData = weatherResponse.data;
-        res.render("weatherDetails.ejs", { weatherData, city });
+        const rawData = weatherResponse.data;
+        const weatherData = {
+            description: rawData.weather[0].description,
+            temperature: kelvinToCelsius(rawData.main.temp),
+            humidity: rawData.main.humidity,
+            windSpeed: mpsToKmph(rawData.wind.speed),
+            sunrise: formatTimestamp(rawData.sys.sunrise),
+            sunset: formatTimestamp(rawData.sys.sunset),
+            icon: rawData.weather[0].icon,
+            city: city,
+            low: kelvinToCelsius(rawData.main.temp_min),
+            high: kelvinToCelsius(rawData.main.temp_max)
+        };
+
+        res.render("weatherDetails.ejs", {weatherData});
         console.log(weatherData);
         
     }catch(error){  

@@ -3,18 +3,50 @@
         <div class="weatherDetails">
             <div class="card mb-3">
                 <div class="card-body">
-                    <span class="card-title text-center fs-1 fw-bold"><%= locals.city %></span>
+                    <h2 class="card-title text-center fs-1 fw-bold">
+                        <%= locals.weatherData.city %>
+                    </h2>
                     <div class="row">
-                        <div class="col-4">
-                            <img src="https://openweathermap.org/img/wn/<%= locals.icon %>@2x.png">
+                        <div class="d-flex justify-content-center align-items-center my-3">
+                            <img src="https://openweathermap.org/img/wn/<%= locals.weatherData.icon %>@2x.png"
+                                alt="Weather Icon" width="70" height="70">
+                            <span class="fs-2 ms-3">
+                                <%= locals.weatherData.temperature %>°C
+                            </span>
                         </div>
-                        <div class="col-8">
-                            <span></span>
-                        </div>
+                    </div>
+                    <div class="description text-center mt-2">
+                        <span class="fs-3">
+                            <%= locals.weatherData.description %>
+                        </span>
+                    </div>
+                    <div class="wind">
+                        <img src="/images/wind.svg" width="25" height="25">
+                        <span class="ms-1">wind: <%= locals.weatherData.windSpeed %> km/h</span>
+                    </div>
+                    <div class="humidity">
+                        <img src="/images/humidity.svg" width="25" height="25">
+                        <span class="ms-1">humidity: <%= locals.weatherData.humidity %> %</span>
+                    </div>
+                    <div class="sunrise">
+                        <img src="/images/sunrise.svg" width="25" height="25">
+                        <span class="ms-1">sunrise: <%= locals.weatherData.sunrise %></span>
+                    </div>
+                    <div class="sunset">
+                        <img src="/images/sunset.svg" width="25" height="25">
+                        <span class="ms-1">sunset: <%= locals.weatherData.sunset %></span>
+                    </div>
+                    <div class="maxTemp">
+                        <img src="/images/maxtemp.svg" width="25" height="25">
+                        <span class="ms-1">Max Temp: <%= locals.weatherData.high %>°C</span>
+                    </div>
+                    <div class="minTemp">
+                        <img src="/images/mintemp.svg" width="25" height="25">
+                        <span class="ms-1">Min Temp: <%= locals.weatherData.low %>°C</span>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
     </div>
     <%- include("partials/footer.ejs") %>

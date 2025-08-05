@@ -24,3 +24,7 @@
     margin-top: 2rem;
     color: white;
 }
+
+.wind, .humidity, .sunrise, .sunset, .maxTemp, .minTemp{
+    margin-top: 10px;
+}
