@@ -1,1 +1,7 @@
 <%- include("partials/header.ejs") %>
+    <div class="container">
+        <div class="weatherDetails container-fluid">
+            <span class="fs-1 fw-bold"> <%= weatherData.weather[0].description %></span>
+        </div>
+    </div>
+<%- include("partials/footer.ejs") %>
