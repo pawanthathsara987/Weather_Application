@@ -12,4 +12,10 @@
             </form>
         </div>
     </div>
+    <% if (locals.error) { %>
+    <div class="alert alert-danger text-center mt-3">
+        <%= error %>
+    </div>
+<% } %>
+
 <%- include("partials/footer.ejs") %>
