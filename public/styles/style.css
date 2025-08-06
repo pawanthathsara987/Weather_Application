@@ -23,6 +23,13 @@
     position: relative;
     margin-top: 2rem;
     color: white;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
 }
 
 .wind, .humidity, .sunrise, .sunset, .maxTemp, .minTemp{
